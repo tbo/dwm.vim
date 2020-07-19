@@ -96,7 +96,7 @@ endfunction
 " Handler for BufWinEnter autocommand
 " Recreate layout broken by new window
 function! DWM_AutoEnter()
-  if winnr('$') == 1
+  if winnr('$') == 1 || winnr() == 1 && &l:filetype != 'help' 
     return
   endif
 
